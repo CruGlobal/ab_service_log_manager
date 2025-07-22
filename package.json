@@ -1,6 +1,6 @@
 {
   "name": "log_manager",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "(AppBuilder) A log manager for various AB operations",
   "main": "app.js",
   "author": "Johnny Hausman",
@@ -11,7 +11,7 @@
     "@sentry/tracing": "^7.10.0",
     "cote": "^1.0.0",
     "lodash": "^4.17.20",
-    "semver": "^7.6.3",
+    "semver": "^7.7.2",
     "uuid": "^8.3.2"
   },
   "scripts": {
