@@ -9,7 +9,7 @@
     "@digiserve/ab-utils": "^1.8.4",
     "@sentry/node": "^7.10.0",
     "@sentry/tracing": "^7.10.0",
-    "cote": "^1.0.0",
+    "cote": "^1.2.0",
     "lodash": "^4.17.20",
     "semver": "^7.7.2",
     "uuid": "^8.3.2"
