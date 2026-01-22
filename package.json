@@ -10,7 +10,7 @@
     "@sentry/node": "^7.10.0",
     "@sentry/tracing": "^7.10.0",
     "cote": "^1.0.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.23",
     "semver": "^7.7.2",
     "uuid": "^8.3.2"
   },
