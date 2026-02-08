@@ -52,7 +52,7 @@ module.exports = function (req, v) {
                  ORDER BY timestamp 
                  ${LIMIT}`;
 
-      req.query(sql, values, (error, results, fields) => {
+      req.query(sql, values, (error, results /* fields */) => {
          if (error) {
             req.log("Error creating RowLog entry:", error);
             req.log(error.sql);
