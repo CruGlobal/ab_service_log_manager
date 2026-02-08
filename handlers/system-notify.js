@@ -2,7 +2,7 @@
  * system-notify
  * our Request handler.
  */
-const Sentry = require("@sentry/node");
+// const Sentry = require("@sentry/node");
 
 module.exports = {
    /**
@@ -28,10 +28,7 @@ module.exports = {
     */
    fn: function handler(req, cb) {
       req.log("log_manager.notification");
-      req.log(
-         "log_manager.notification recieved",
-         req.params(),
-      );
+      req.log("log_manager.notification recieved", req.params());
       cb();
    },
 };
