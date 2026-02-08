@@ -1,6 +1,6 @@
 {
    "name": "log_manager",
-   "version": "1.1.9",
+   "version": "1.2.0",
    "description": "(AppBuilder) A log manager for various AB operations",
    "main": "app.js",
    "author": "Johnny Hausman",
@@ -11,7 +11,7 @@
       "@sentry/tracing": "^7.10.0",
       "cote": "^1.2.0",
       "lodash": "^4.17.21",
-      "semver": "^7.7.3",
+      "semver": "^7.7.4",
       "uuid": "^8.3.2"
    },
    "scripts": {
@@ -27,17 +27,17 @@
       "devInstall:darwin:linux": "docker run -it --mount type=bind,source=\"$(pwd)\",target=/app -w /app node bash"
    },
    "devDependencies": {
+      "@eslint/js": "^9.15.0",
       "chai": "^4.3.7",
       "eslint": "^9.26.0",
       "eslint-config-prettier": "^10.1.8",
       "eslint-plugin-prettier": "^5.4.0",
+      "globals": "^16.0.0",
       "mocha": "^10.4.0",
       "nodemon": "^3.1.11",
       "npm-run-all": "^4.1.5",
       "prettier": "^3.0.0",
-      "run-script-os": "^1.1.5",
-      "@eslint/js": "^9.15.0",
-      "globals": "^16.0.0"
+      "run-script-os": "^1.1.5"
    },
    "overrides": {
       "@opentelemetry/api": "^1.7.0",
