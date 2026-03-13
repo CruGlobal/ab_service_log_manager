@@ -2,12 +2,9 @@
  * rowlog-create
  * our Request handler.
  */
-const sqlRowLogCreate = require("../queries/rowLog-Create.js");
+import sqlRowLogCreate from "../queries/rowLog-Create.js";
 
-module.exports = {
-   /**
-    * Key: the cote message key we respond to.
-    */
+export default {
    key: "log_manager.rowlog-create",
 
    /**
@@ -47,8 +44,6 @@ module.exports = {
     *        a node style callback(err, results) to send data when job is finished
     */
    fn: function handler(req, cb) {
-      //
-
       req.log("log_manager.rowlog-create");
 
       // Get the passed in parameters
@@ -57,7 +52,6 @@ module.exports = {
          values[k] = req.param(k);
       });
 
-      // simply the data we are storing:
       let ignoreProps = [
          "id",
          "uuid",
@@ -76,7 +70,7 @@ module.exports = {
       values.record = JSON.stringify(values.record);
 
       sqlRowLogCreate(req, values)
-         .then((/*list*/) => {
+         .then(() => {
             cb(null, { status: "success" });
          })
          .catch(cb);

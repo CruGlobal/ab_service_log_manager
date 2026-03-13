@@ -2,12 +2,7 @@
  * system-notify
  * our Request handler.
  */
-// const Sentry = require("@sentry/node");
-
-module.exports = {
-   /**
-    * Key: the cote message key we respond to.
-    */
+export default {
    key: "log_manager.notification",
 
    inputValidation: {

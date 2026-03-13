@@ -2,12 +2,9 @@
  * rowlog-find
  * our Request handler.
  */
-const queryRowLogFind = require("../queries/rowLog-Find.js");
+import queryRowLogFind from "../queries/rowLog-Find.js";
 
-module.exports = {
-   /**
-    * Key: the cote message key we respond to.
-    */
+export default {
    key: "log_manager.rowlog-find",
 
    /**
@@ -49,8 +46,6 @@ module.exports = {
     *        a node style callback(err, results) to send data when job is finished
     */
    fn: function handler(req, cb) {
-      //
-
       req.log("log_manager.rowlog-find");
 
       var values = {};

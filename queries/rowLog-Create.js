@@ -1,20 +1,17 @@
 // rowLog-Create.sql
 // Insert a row into the AB_RowLog table
-const uuid = require("uuid");
+import { v4 as uuidv4 } from "uuid";
 
-module.exports = function (req, v) {
+export default function (req, v) {
    return new Promise((resolve, reject) => {
       let tenantDB = req.queryTenantDB(reject);
       if (!tenantDB) {
-         // reject() has already been called in .queryTenantDB()
          return;
       }
 
       tenantDB += ".";
 
-      var id = v["uuid"] ?? uuid.v4();
-      // {uuid}
-      // This is an AppBuilder Object, so it requires a uuid for each entry.
+      var id = v["uuid"] ?? uuidv4();
 
       var fieldOrder = [
          "username",
@@ -47,8 +44,8 @@ module.exports = function (req, v) {
          ", ",
       )})
       			  VALUES ("${id}", NOW(), NULL, NULL, NOW(), ${placeholders.join(
-                    ", ",
-                 )} );`;
+         ", ",
+      )} );`;
 
       req.query(sql, values, (error, results /* fields */) => {
          if (error) {
@@ -60,4 +57,4 @@ module.exports = function (req, v) {
          }
       });
    });
-};
+}

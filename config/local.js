@@ -1,10 +1,11 @@
 /*
  * log_manager
  */
-const AB = require("@digiserve/ab-utils");
+import AB from "@digiserve/ab-utils";
+
 const env = AB.defaults.env;
 
-module.exports = {
+export default {
    log_manager: {
       /*************************************************************************/
       /* enable: {bool} is this service active?                                */

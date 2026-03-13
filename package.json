@@ -1,5 +1,6 @@
 {
    "name": "log_manager",
+   "type": "module",
    "version": "1.2.2",
    "description": "(AppBuilder) A log manager for various AB operations",
    "main": "app.js",

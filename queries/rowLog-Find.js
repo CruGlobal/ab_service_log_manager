@@ -1,11 +1,10 @@
 // rowLog-Find.js
 // return values from the AB_RowLog table
 
-module.exports = function (req, v) {
+export default function (req, v) {
    return new Promise((resolve, reject) => {
       let tenantDB = req.queryTenantDB(reject);
       if (!tenantDB) {
-         // reject() has already been called in .queryTenantDB()
          return;
       }
 
@@ -54,7 +53,7 @@ module.exports = function (req, v) {
 
       req.query(sql, values, (error, results /* fields */) => {
          if (error) {
-            req.log("Error creating RowLog entry:", error);
+            req.log("Error finding RowLog entry:", error);
             req.log(error.sql);
             reject(error);
          } else {
@@ -62,4 +61,4 @@ module.exports = function (req, v) {
          }
       });
    });
-};
+}

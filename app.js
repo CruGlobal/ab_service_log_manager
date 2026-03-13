@@ -2,8 +2,12 @@
 // log_manager
 // (AppBuilder) A log manager for various AB operations
 //
-const AB = require("@digiserve/ab-utils");
-const { version } = require("./package");
+import AB from "@digiserve/ab-utils";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const { version } = require("./package.json");
+
 // Use sentry by default, but can override with env.TELEMETRY_PROVIDER
 if (AB.defaults.env("TELEMETRY_PROVIDER", "sentry") == "sentry") {
    AB.telemetry.init("sentry", {
@@ -16,6 +20,4 @@ if (AB.defaults.env("TELEMETRY_PROVIDER", "sentry") == "sentry") {
 }
 
 const controller = AB.controller("log_manager");
-// controller.afterStartup((cb)=>{ return cb(/* err */) });
-// controller.beforeShutdown((cb)=>{ return cb(/* err */) });
 controller.init();
