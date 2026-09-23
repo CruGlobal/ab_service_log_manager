@@ -44,13 +44,13 @@ module.exports = function (req, v) {
       });
 
       let sql = `INSERT INTO ${tenantDB}\`SITE_ROWLOG\` ( uuid, created_at, updated_at, properties, timestamp, ${fieldOrder.join(
-         ", "
+         ", ",
       )})
       			  VALUES ("${id}", NOW(), NULL, NULL, NOW(), ${placeholders.join(
-         ", "
-      )} );`;
+                    ", ",
+                 )} );`;
 
-      req.query(sql, values, (error, results, fields) => {
+      req.query(sql, values, (error, results /* fields */) => {
          if (error) {
             req.log("Error creating RowLog entry:", error);
             req.log(error.sql);
